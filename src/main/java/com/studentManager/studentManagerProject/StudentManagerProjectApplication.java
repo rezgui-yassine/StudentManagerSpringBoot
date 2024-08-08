@@ -17,45 +17,12 @@ public class StudentManagerProjectApplication {
 		SpringApplication.run(StudentManagerProjectApplication.class, args);
 	}
 
-	@GetMapping("/getData")
-	public Message getData() {
-		ArrayList<String> list = new ArrayList<>();
-		list.add("Hello");
-		list.add("World");
-		list.add("Java");
-		return new Message("Hello World", list);
-	}
+
+
 	// for record message in database
 	// create class Message with getter and setter with attribute message
 	//record  Message (String message) {}
 
-	class Message {
-		private final String message;
-			ArrayList<String> list = new ArrayList<>();
 
-        Message(String message, ArrayList<String> list) {
-			this.list = list;
-            this.message = message;
-        }
-
-		public String getMessage() {
-			return message;
-		}
-
-		public ArrayList<String> getList() {
-			return list;
-		}
-
-		public void setList(ArrayList<String> list) {
-			this.list = list;
-		}
-
-		@Override
-		public String toString() {
-			return "Message{" +
-					"message='" + message + '\'' +
-					'}';
-		}
-	}
 
 }
