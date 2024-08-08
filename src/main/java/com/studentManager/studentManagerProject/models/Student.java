@@ -1,17 +1,24 @@
 package com.studentManager.studentManagerProject.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
+    @Id
+    @GeneratedValue
     private Integer id;
     private String firstName;
     private String lastname;
     private String email;
-    private String phone;
+    private int phone;
     private String address;
 
     public Student() {
     }
 
-    public Student(Integer id, String firstName, String lastname, String email, String phone, String address) {
+    public Student(Integer id, String firstName, String lastname, String email, int phone, String address) {
         this.id = id;
         this.firstName = firstName;
         this.lastname = lastname;
@@ -52,11 +59,11 @@ public class Student {
         this.email = email;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
@@ -75,7 +82,7 @@ public class Student {
                 ", firstName='" + firstName + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
+                ", phone=" + phone +
                 ", address='" + address + '\'' +
                 '}';
     }
