@@ -1,6 +1,7 @@
 package com.studentManager.studentManagerProject.controller;
 
 
+import com.studentManager.studentManagerProject.models.Student;
 import com.studentManager.studentManagerProject.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,20 +11,12 @@ import java.util.ArrayList;
 
 @RestController
 public class StudentController {
-    // for define endPoint and return data to the client
+    // inject the service class to the controller with attribute
+   @Autowired
     private  StudentService studentService;
-
-    // constructor injection for studentService object to be injected into the StudentController
-    @Autowired
-    public StudentController(StudentService studentService){
-        this.studentService = studentService;
-    }
-
-
-
     @GetMapping("/students")
-    public ArrayList<String>displayStudents(){
+    public ArrayList<Student>displayStudents(){
 
-        return studentService.getStdnts();
+        return studentService.getAllStudnets();
     }
 }
