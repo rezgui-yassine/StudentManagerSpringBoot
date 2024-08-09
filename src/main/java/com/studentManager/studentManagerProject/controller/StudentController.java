@@ -44,4 +44,21 @@ public class StudentController {
           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
       }
   }
+
+
+  // endpoint of update Student
+    @PutMapping("/updateStudent/{id}")
+    public Student updateStudent(@RequestBody Student student) throws IllegalAccessException {
+      if (student.getId() == null){
+          throw new RuntimeException("Student id is required");
+      }
+      else {
+          studentService.updateStudent(student);
+          return student;
+      }
+    }
+
+
+
+
 }
