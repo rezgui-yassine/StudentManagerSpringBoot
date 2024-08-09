@@ -18,6 +18,14 @@ public class Student {
     public Student() {
     }
 
+    public Student(String firstName, String lastname, String email, int phone, String address) {  
+        this.firstName = firstName;
+        this.lastname = lastname;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+    }
+
     public Student(Integer id, String firstName, String lastname, String email, int phone, String address) {
         this.id = id;
         this.firstName = firstName;

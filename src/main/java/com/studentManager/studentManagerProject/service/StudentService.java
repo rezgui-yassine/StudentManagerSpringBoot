@@ -16,8 +16,19 @@ public class StudentService {
     public List<Student> getAllStudents() {
         return repoStudent.findAll();
     }
-
+    // get student by id
     public Student getStudentById(Integer id){
         return repoStudent.findById(id).orElse(null);
+    }
+    // add student
+    public void addStudent(Student student){
+        repoStudent.save(student);
+    }
+    // delete student
+    public void deleteStudent(Integer id) {
+        if (!repoStudent.existsById(id)) {
+            throw new RuntimeException("Student not found with id: " + id);
+        }
+        repoStudent.deleteById(id);
     }
 }
